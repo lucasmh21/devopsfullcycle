@@ -8,6 +8,9 @@ services:
       - .:/var/www
     networks:
       - app-network
+    depends_on:
+      - redis
+      - db
   nginx:
     build: .docker/nginx
     container_name: nginx
@@ -19,6 +22,12 @@ services:
       - .:/var/www
     networks:
       - app-network
+    depends_on:
+      - app
+    environment:
+      - APP_HOST=app
+      - APP_PORT=9000
+    entrypoint: /home/entrypoint.sh
   redis:
     image: redis:alpine
     expose:
