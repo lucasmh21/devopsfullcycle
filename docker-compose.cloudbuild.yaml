@@ -27,7 +27,7 @@ services:
     environment:
       - APP_HOST=app
       - APP_PORT=9000
-    # entrypoint: /home/entrypoint.sh
+    entrypoint: /home/entrypoint.sh
   redis:
     image: redis:alpine
     expose:
