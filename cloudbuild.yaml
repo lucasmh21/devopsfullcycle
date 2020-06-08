@@ -5,3 +5,6 @@ steps:
   - id: "Rodando docker ps"
     name: 'gcr.io/cloud-builders/docker'
     args: ['ps']
+  - id: "Rodando o composer"
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['exec','-t', 'app', 'composer','install']
