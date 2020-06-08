@@ -1,0 +1,19 @@
+
+   ErrorException 
+
+  file_get_contents(/var/www/.env): failed to open stream: No such file or directory
+
+  at vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:96
+     92|     {
+     93|         file_put_contents($this->laravel->environmentFilePath(), preg_replace(
+     94|             $this->keyReplacementPattern(),
+     95|             'APP_KEY='.$key,
+  >  96|             file_get_contents($this->laravel->environmentFilePath())
+     97|         ));
+     98|     }
+     99| 
+    100|     /**
+
+      [2m+17 vendor frames [22m
+  18  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
